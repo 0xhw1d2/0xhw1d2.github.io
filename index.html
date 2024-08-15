@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot asf</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 5em;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+            color: rgba(255, 165, 0, 0.3);
+            transition: color 0.3s ease;
+        }
+
+        h1:hover {
+            color: rgba(255, 165, 0, 0.7);
+        }
+
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            background: white;
+            opacity: 0.5;
+            pointer-events: none;
+            animation: twinkle 1.5s infinite;
+        }
+
+        @keyframes twinkle {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.5); }
+            100% { transform: translateY(0) scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stern</h1>
+        <p>What are you doing here ??????</p>
+        <a href="https://discord.gg/fqq2EPCqAq">Official Discord.</a>
+    </div>
+
+    <script>
+        const numStars = 100;
+        const body = document.body;
+
+        function createStar() {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 1 + 'px';
+            star.style.width = size;
+            star.style.height = size;
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.animationDuration = Math.random() * 2 + 1 + 's'; // Variation de la vitesse de scintillement
+            body.appendChild(star);
+        }
+
+        for (let i = 0; i < numStars; i++) {
+            createStar();
+        }
+    </script>
+</body>
+</html>
